@@ -932,7 +932,8 @@ function ProjectionHelperOverlay(map) {
 
   
 }
-ProjectionHelperOverlay.prototype = new google.maps.OverlayView();
+ProjectionHelperOverlay.prototype = Object.create(google.maps.OverlayView.prototype);
+ProjectionHelperOverlay.prototype.constructor = ProjectionHelperOverlay;
 
 /**
  *  Helper function to convert Lng to X
