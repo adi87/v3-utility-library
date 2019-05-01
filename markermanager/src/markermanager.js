@@ -933,6 +933,7 @@ function ProjectionHelperOverlay(map) {
 
   
 }
+/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create */
 ProjectionHelperOverlay.prototype = Object.create(google.maps.OverlayView.prototype);
 ProjectionHelperOverlay.prototype.constructor = ProjectionHelperOverlay;
 
@@ -963,7 +964,7 @@ ProjectionHelperOverlay.prototype.LatToY_ = function (lat) {
 **/
 ProjectionHelperOverlay.prototype.LatLngToPixel = function (latlng, zoom) {
   var map = this._map;
-  var div = this.getProjection().fromLatLngToDivPixel(latlng);
+  // var div = this.getProjection().fromLatLngToDivPixel(latlng);
   var abs = {x: ~~(0.5 + this.LngToX_(latlng.lng()) * (2 << (zoom + 6))), y: ~~(0.5 + this.LatToY_(latlng.lat()) * (2 << (zoom + 6)))};
   return abs;
 };
