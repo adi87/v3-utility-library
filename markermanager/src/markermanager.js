@@ -916,7 +916,8 @@ MarkerManager.prototype.removeFromArray_ = function (array, value, opt_notype) {
 *   @param {Map} map The map to manage.
 **/
 function ProjectionHelperOverlay(map) {
-  
+
+  google.maps.OverlayView.call(this); // call super constructor
   this.setMap(map);
 
   var TILEFACTOR = 8;
